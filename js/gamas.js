@@ -8,9 +8,7 @@ $(document).ready(function () {
         $.ajax({
             url: urlServicio,
             type: "GET",
-            contentType: "application/json; charset=utf-8",
-            dataType: "jsonp",
-            cache: false,
+            
 
             success: function (result) {
                 var i = 0;
@@ -69,7 +67,7 @@ $(document).ready(function () {
                 type: "POST",
                 data: JSON.stringify({ "name":name, "description":description}),
                 contentType: "application/json; charset=utf-8",
-                dataType: "jsonp",
+                dataType: "json",
                 cache: false,
                 success: function(){
                     alert("Se ha agregado");
@@ -91,7 +89,7 @@ function deleteGama(id){
         url: urlServicio,
         type: "DELETE",
         contentType: "application/json; charset=utf-8",
-        dataType: "jsonp",
+        dataType: "json",
         cache: false,
     });   
 }
@@ -107,7 +105,7 @@ function updateGama(idGama){
                 type: "PUT",
                 data: JSON.stringify({ "idGama":idGama, "name":name, "description":description}),
                 contentType: "application/json; charset=utf-8",
-                dataType: "jsonp",
+                dataType: "json",
                 
                 success: (function(){
                     idGama = 0;
